@@ -1,0 +1,7 @@
+---
+project_name: example-label-checker-consumer
+build:
+  skip: true
+release:
+  github:
+  prerelease: auto
