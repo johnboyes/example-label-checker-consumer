@@ -16,3 +16,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: agilepathway/label-checker@master
+        with:
+          myInput: John
