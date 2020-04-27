@@ -17,4 +17,9 @@ jobs:
     steps:
       - uses: agilepathway/label-checker@master
         with:
-          myInput: John
+          labels: >
+            [
+              "major",
+              "minor",
+              "patch"
+            ]
