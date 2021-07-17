@@ -10,7 +10,7 @@ jobs:
       sha7: ${{ steps.prepare.outputs.sha7 }}
     steps:
       - id: check-label
-        uses: agilepathway/label-checker@v1.0.90
+        uses: agilepathway/label-checker@experiment
         continue-on-error: true
         with:
           one_of: cicd
