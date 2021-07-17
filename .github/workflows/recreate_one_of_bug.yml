@@ -1,0 +1,21 @@
+---
+on:  # yamllint disable-line rule:truthy
+  pull_request:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-20.04
+    continue-on-error: true
+    outputs:
+      sha7: ${{ steps.prepare.outputs.sha7 }}
+    steps:
+      - id: check-label
+        uses: agilepathway/label-checker@experiment
+        continue-on-error: true
+        with:
+          one_of: cicd
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - if: steps.check-label.outcome == 'success'
+        run: |
+          echo "::set-output name=sha7::${GITHUB_SHA:0:7}"
